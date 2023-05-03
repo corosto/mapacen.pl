@@ -8,11 +8,14 @@
   >
   </my-input>
 
-  <mat-form-field class="fix backgroundColor item">
-    <mat-label>Produkt</mat-label>
+  <mat-form-field
+    class="fix backgroundColor item"
+    [hideRequiredMarker]="true"
+  >
+    <mat-label class="black">Produkt</mat-label>
     <mat-select formControlName="product">
       <mat-option
-        *ngFor="let item of products | async"
+        *ngFor="let item of products$ | async"
         [value]="item.id"
       >
         {{ item.name }}
@@ -20,8 +23,11 @@
     </mat-select>
   </mat-form-field>
 
-  <mat-form-field class="fix backgroundColor item">
-    <mat-label>Punkt sprzedaży</mat-label>
+  <mat-form-field
+    class="fix backgroundColor item"
+    [hideRequiredMarker]="true"
+  >
+    <mat-label class="black">Punkt sprzedaży</mat-label>
     <mat-select formControlName="salesPoint">
       <mat-option
         *ngFor="let item of salesPointsFixedNames"

@@ -3,17 +3,19 @@
     <button
       mat-fab
       (click)="clearForm()"
-      class="secondaryColor fab"
+      class="secondaryColor"
     >
-      <mat-icon>delete</mat-icon>
+      <mat-icon class="white">delete</mat-icon>
     </button>
     <button
       mat-raised-button
       class="button secondaryColor"
       (click)="submitForm()"
     >
-      Wyślij
-      <mat-icon class="icon">send</mat-icon>
+      <span class="white margin">
+        Wyślij
+        <mat-icon class="icon">send</mat-icon>
+      </span>
     </button>
   </div>
 
@@ -24,5 +26,6 @@
   class="table"
   [action]="action"
   [operationText]="operationText"
->
+  (emitClear)="clearAction()"
+  >
 </app-admin-show-table>

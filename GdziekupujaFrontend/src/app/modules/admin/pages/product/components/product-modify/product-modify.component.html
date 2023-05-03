@@ -1,6 +1,9 @@
 <div class="forms">
-  <mat-form-field class="fix backgroundColor item">
-    <mat-label>Produkt</mat-label>
+  <mat-form-field
+    class="fix backgroundColor item"
+    [hideRequiredMarker]="true"
+  >
+    <mat-label class="black">Produkt</mat-label>
     <mat-select formControlName="product">
       <mat-option
         *ngFor="let item of products | async"
@@ -20,8 +23,11 @@
   >
   </my-input>
 
-  <mat-form-field class="fix backgroundColor item">
-    <mat-label>Kategoria</mat-label>
+  <mat-form-field
+    class="fix backgroundColor item"
+    [hideRequiredMarker]="true"
+  >
+    <mat-label class="black">Kategoria</mat-label>
     <mat-select formControlName="category">
       <mat-option
         *ngFor="let item of categories | async"

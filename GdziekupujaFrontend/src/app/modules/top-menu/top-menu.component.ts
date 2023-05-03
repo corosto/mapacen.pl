@@ -6,6 +6,7 @@ import { MyLocalStorageService } from '@shared/services/my-local-storage.service
 import { idNameOnly, OfferContent } from '@modules/top-menu/interfaces/top-menu.interface';
 import { Component, EventEmitter, OnInit, Output, ViewEncapsulation } from '@angular/core';
 import { LoginDialogComponent } from '@modules/top-menu/components/login-dialog/login-dialog.component';
+import { AddOfferDialogComponent } from './components/add-offer-dialog/add-offer-dialog.component';
 
 @Component({
   selector: 'app-top-menu',
@@ -17,6 +18,7 @@ export class TopMenuComponent implements OnInit {
 
   @Output() refreshOffers = new EventEmitter<OfferContent>();
   @Output() getFavourites = new EventEmitter();
+  @Output() justRefreshOffers = new EventEmitter();
   counties: idNameOnly[] = [];
   categories: idNameOnly[] = [];
   form: FormGroup;
@@ -102,7 +104,7 @@ export class TopMenuComponent implements OnInit {
       data: this.counties,
     });
 
-    dialogRef.afterClosed().subscribe(result => {
+    dialogRef.afterClosed().subscribe((result) => {
       if (result === 'logged') {
         const county = this.counties.find((res) => res.id.toString() === localStorage.getItem('userLocalCountyId'))?.name;
         this.userLocalCounty = county ? county : '';
@@ -119,6 +121,15 @@ export class TopMenuComponent implements OnInit {
   }
 
   addOffer() {
-    //dialog z dodawaniem oferty
+    const dialogRef = this.dialog.open(AddOfferDialogComponent, {
+      width: '450px',
+      height: '500px',
+    });
+
+    dialogRef.afterClosed().subscribe((res) => {
+      if (res === 'refresh') {
+        this.justRefreshOffers.emit();
+      }
+    });
   }
 }

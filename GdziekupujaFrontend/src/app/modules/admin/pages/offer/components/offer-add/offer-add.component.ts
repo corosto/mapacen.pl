@@ -1,4 +1,4 @@
-import { Observable } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { ControlContainer, FormGroup, FormGroupDirective } from '@angular/forms';
 import { Product, SalesPoint } from '@modules/offers/interfaces/offers.interface';
@@ -21,8 +21,8 @@ import { OfferFormHandlerService } from '@modules/admin/pages/offer/services/off
 export class OfferAddComponent implements OnInit {
 
   form: FormGroup;
-  products: Observable<Product[]>;
-  salesPoints: Observable<SalesPoint[]>;
+  products$: Observable<Product[]>;
+  salesPoints$: Observable<SalesPoint[]>;
   salesPointsFixedNames: ChangedNames[] = [];
 
   constructor(
@@ -35,10 +35,10 @@ export class OfferAddComponent implements OnInit {
     this.form = this.controlContainer.control as FormGroup;
     this.offerFormHandlerService.setFormGroupForOfferAdd(this.form);
 
-    this.products = this.adminStorageService.products$.asObservable();
-    this.salesPoints = this.adminStorageService.salesPoints$.asObservable();
+    this.products$ = this.adminStorageService.products$.asObservable();
+    this.salesPoints$ = this.adminStorageService.salesPoints$.asObservable();
 
-    this.salesPoints.subscribe((result) => result.map((res) => {
+    this.salesPoints$.subscribe((result) => result.map((res) => {
       this.salesPointsFixedNames.push({
         id: res.id,
         changedName: res.name + ', ' + res.address.city + ' ul. ' + res.address.street + ' ' + res.address.number,

@@ -3,6 +3,25 @@
 
 @include mat.core();
 
+
+
+$my-primary: mat.define-palette(mat.$gray-palette, 900);
+$my-accent: mat.define-palette(mat.$amber-palette, 400);
+
+// The "warn" palette is optional and defaults to red if not specified.
+$my-warn: mat.define-palette(mat.$red-palette);
+
+$my-theme: mat.define-light-theme((color: (primary: $my-primary,
+        accent: $my-accent,
+        warn: $my-warn,
+      ),
+      typography: mat.define-typography-config(),
+      density: 0,
+    ));
+
+@include mat.core-theme($my-theme);
+@include mat.all-component-themes($my-theme);
+
 @font-face {
   font-family: 'SiteTitle';
   src: url(../assets/fonts/Berlin-Sans-FB-Regular.ttf);
@@ -11,6 +30,11 @@
 @font-face {
   font-family: 'Labels';
   src: url(../assets/fonts/ErasDemiITC.ttf);
+}
+
+@font-face {
+  font-family: 'UseForAll';
+  src: url(../assets/fonts/Cresta-Regular.ttf);
 }
 
 .backgroundColor {
@@ -29,7 +53,11 @@
 }
 
 .black {
-  color: black
+  color: black !important;
+}
+
+.white {
+  color: white !important;
 }
 
 html,
@@ -66,7 +94,7 @@ html {
 }
 
 .loginDialog {
-  border-radius: 24px;
+  border-radius: 12px;
 }
 
 
@@ -101,7 +129,7 @@ html {
 
 .mdc-text-field {
   background-color: transparent !important;
-  border-radius: 24px;
+  border-radius: 12px;
 }
 
 .mat-mdc-form-field-focus-overlay {
@@ -144,19 +172,19 @@ html {
   }
 }
 
-.mat-mdc-menu-item.mdc-list-item {
-  &:hover {
-    background-color: color.$itemColor;
-  }
-}
+// .mat-mdc-menu-item.mdc-list-item {
+//   &:hover {
+//     background-color: color.$itemColor;
+//   }
+// }
 
 .mat-mdc-table {
-  background-color: color.$backgroundColor;
+  background-color: color.$secondaryDarkerColor;
 }
 
 .mat-mdc-paginator-container,
 .mat-mdc-paginator {
-  background-color: color.$backgroundColor;
+  background-color: color.$secondaryDarkerColor;
   border-radius: 0 0 18px 18px;
 }
 
@@ -168,10 +196,14 @@ html {
   fill: black !important;
 }
 
-// .mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__input {
-//   color: red;
-// }
-
 .mat-mdc-dialog-container .mdc-dialog__surface {
   box-shadow: none !important;
+}
+
+.mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__input {
+  color: black;
+}
+
+.mat-mdc-option .mdc-list-item__primary-text {
+  color: white;
 }

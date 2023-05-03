@@ -14,6 +14,7 @@ export class HomeComponent implements OnInit {
   admin = false;
   offer: OfferContent;
   favouritesId = 0;
+  refreshTrigger = 0;
 
   constructor(
     private router: Router,
@@ -34,5 +35,9 @@ export class HomeComponent implements OnInit {
 
   getFavourites(): void {
     this.favouritesId += 1;
+  }
+
+  justRefreshOffers(): void {
+    this.refreshTrigger += 1;
   }
 }

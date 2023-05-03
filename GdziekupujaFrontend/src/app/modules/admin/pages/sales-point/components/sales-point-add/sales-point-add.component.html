@@ -45,10 +45,10 @@
   </my-input>
 
   <mat-form-field
-    *ngIf="isServiceAdmin"
     class="fix backgroundColor item"
+    [hideRequiredMarker]="true"
   >
-    <mat-label>Powiat</mat-label>
+    <mat-label class="black">Powiat</mat-label>
     <mat-select formControlName="countyId">
       <mat-option
         *ngFor="let item of counties"

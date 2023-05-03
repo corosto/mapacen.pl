@@ -1,6 +1,9 @@
 <div class="forms">
-  <mat-form-field class="fix backgroundColor item">
-    <mat-label>Oferta</mat-label>
+  <mat-form-field
+    class="fix backgroundColor item"
+    [hideRequiredMarker]="true"
+  >
+    <mat-label class="black">Oferta</mat-label>
     <mat-select formControlName="offer">
       <mat-option
         *ngFor="let item of offersFixedNames"

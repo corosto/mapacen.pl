@@ -1,7 +1,7 @@
 import { Api } from '@core/enums/api.enum';
 import { MatSort } from '@angular/material/sort';
 import { MatPaginator } from '@angular/material/paginator';
-import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { MatTable, MatTableDataSource } from '@angular/material/table';
 import { UserInfo } from '@modules/top-menu/interfaces/top-menu.interface';
 import { AllAdminActionsType } from '@modules/admin/types/admin-actions.types';
@@ -52,8 +52,13 @@ export class AdminShowTableComponent implements OnInit {
       else if (value === 'UnbanUser') {
         this.toastMessageService.notifyOfSuccess("Odbanowano użytkownika");
       }
+
+      this.emitClear.emit();
     }
   }
+
+  @Output() emitClear = new EventEmitter();
+
   @ViewChild(MatTable) table: MatTable<any[]>;
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;

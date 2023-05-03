@@ -5,15 +5,6 @@
 .button {
   height: 56px;
   border-radius: 18px;
-  border: 1px solid white;
-  
-  &:disabled {
-    background-color: rgb(96, 87, 121) !important;
-  }
-}
-
-.fab {
-  border: 1px solid white;
 }
 
 .icon {
@@ -42,4 +33,9 @@
 .table {
   position: relative;
   bottom: 30px;
+}
+
+.margin {
+  display: flex;
+  align-items: center;
 }

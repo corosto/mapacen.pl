@@ -4,7 +4,9 @@
     [matMenuTriggerFor]="show"
     class="button"
   >
-    {{ functionName }}
+    <span class="white">
+      {{ functionName }}
+    </span>
     <mat-icon class="icon">
       arrow_drop_down
     </mat-icon>
@@ -21,7 +23,9 @@
         mat-menu-item
         (click)="changeDropdown(item)"
       >
-        {{ item.text }}
+        <span class="white">
+          {{ item.text }}
+        </span>
       </button>
     </ng-container>
   </ng-container>
