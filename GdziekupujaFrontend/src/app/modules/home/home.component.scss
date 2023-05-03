@@ -1,0 +1,20 @@
+@use '/src/styles/colors' as color;
+
+.admin-button {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  background-color: color.$secondaryColor;
+  color: black;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.size {
+  width: 100%;
+  margin: 1% 20%;
+}

@@ -1,0 +1,35 @@
+my-input {
+  width: 100%;
+  display: flex;
+  
+  .form-field {
+    width: 100%;
+  }
+
+  .suffixOutside {
+    margin-top: 15px;
+    margin-left: 15px;
+  }
+
+  .mat-error {
+    display: flex !important;
+    justify-content: space-between;
+  }
+
+    ::placeholder {
+      /* Chrome, Firefox, Opera, Safari 10.1+ */
+      color: red;
+      opacity: 1;
+      /* Firefox */
+    }
+  
+    :-ms-input-placeholder {
+      /* Internet Explorer 10-11 */
+      color: red;
+    }
+  
+    ::-ms-input-placeholder {
+      /* Microsoft Edge */
+      color: red;
+    }
+}

@@ -34,7 +34,7 @@ namespace MapacenBackend.Services
 
             var path = Path.Combine(Path.GetFullPath("wwwroot"), dto.Image.FileName);
             if (File.Exists(path))
-                throw new NotUniqueElementException("Plik o takiej nazwie już istnieje");
+            //    throw new NotUniqueElementException("Plik o takiej nazwie już istnieje");
 
             using(var image = Image.FromStream(dto.Image.OpenReadStream()))
             {
