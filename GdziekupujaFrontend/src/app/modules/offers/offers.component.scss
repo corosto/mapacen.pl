@@ -10,8 +10,8 @@
 }
 
 .totalCount {
-  font-size: 26px;
-  padding: 6px 0 10px;
+  font-size: 24px;
+  padding: 10px 0 12px;
 }
 
 .offer {
@@ -36,10 +36,9 @@
 }
 
 .item {
-  border: 1px solid white;
-  border-radius: 24px;
+  border-radius: 12px;
   width: 100%;
-  margin-bottom: 22px;
+  margin-bottom: 25px;
 }
 
 .container {
@@ -90,21 +89,16 @@
     width: 20%;
     display: flex;
     justify-content: end;
-
-    &--move {
-      position: relative;
-      left: 13px;
-    }
   }
 
   &--center {
-    padding: 10px 15px 0;
+    padding: 6px 15px 0;
     height: 100%;
     width: 60%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 14px;
+    gap: 5px;
   }
 }
 
@@ -142,6 +136,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  padding: 0 !important;
 }
 
 .noData {
