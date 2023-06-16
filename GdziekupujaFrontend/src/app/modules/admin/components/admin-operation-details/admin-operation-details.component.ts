@@ -37,18 +37,14 @@ export class AdminOperationDetailsComponent implements OnInit {
     if (this.adminForm.valid) {
       this.adminSubmitFormService.sendForm(this.adminForm, this.adminStorageService.currentAction).subscribe(() => {
         this.action = this.adminStorageService.currentAction;
-        this.clearForm();
       });
-    } else {
-      this.toastMessageService.notifyOfError("Źle wprowadzone dane");
+      this.adminForm.reset();
+      return;
     }
+    this.toastMessageService.notifyOfError("Źle wprowadzone dane");
   }
 
   clearForm(): void {
-    this.adminForm.reset();
-  }
-
-  clearAction() {
-    setTimeout(() => this.action = null, 100)
+    this.adminForm.reset()
   }
 }

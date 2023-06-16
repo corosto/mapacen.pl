@@ -26,11 +26,11 @@
 
 .color {
   &-default {
-    background-color: color.$secondaryColor;
+    background-color: rgb(68, 53, 107);
   }
 
   &-clicked {
-    background-color: color.$secondaryColorClicked;
+    background-color: color.$secondaryColor;
   }
 }
 

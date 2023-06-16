@@ -3,16 +3,10 @@
     mat-dialog-title
     class="title"
   >
-    <span
-      *ngIf="login"
-      class="black"
-    >
+    <span *ngIf="login" class="black">
       Logowanie
     </span>
-    <span
-      *ngIf="!login"
-      class="black"
-    >
+    <span *ngIf="!login" class="black">
       Rejestracja
     </span>
   </h1>
@@ -121,9 +115,7 @@
       (click)="handleFormSubmit()"
       [mat-dialog-close]="'logged'"
     >
-      <span class="white">
-        Zaloguj się
-      </span>
+      Zaloguj się
     </button>
     <button
       *ngIf="!login"
@@ -132,9 +124,7 @@
       mat-stroked-button
       (click)="handleFormSubmit()"
     >
-      <span class="white">
-        Zarejestruj się
-      </span>
+      Zarejestruj się
     </button>
   </div>
   <div class="position--gap">

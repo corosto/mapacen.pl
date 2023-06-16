@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+// import { AuthAdminGuard } from '@app/auth/auth-admin.guard';
+// import { AuthOfferGuard } from '@app/auth/auth-offer.guard';
 import { AppComponent } from '@app/app.component';
 import { InputMaskModule } from '@ngneat/input-mask';
 import { HttpClientModule } from '@angular/common/http';
@@ -17,11 +19,6 @@ export const customIcons: [string, string][] = [
   ["my-dislike-clicked", "dislike-clicked.svg"],
   ["my-like-not-clicked", "like-not-clicked.svg"],
   ["my-dislike-not-clicked", "dislike-not-clicked.svg"],
-  ["ziomek", "ziomek.svg"],
-  ["location", "location.svg"],
-  ["left", "left.svg"],
-  ["right", "right.svg"],
-  ["clock", "clock.svg"],
 ];
 
 @NgModule({
@@ -38,6 +35,8 @@ export const customIcons: [string, string][] = [
     MatSnackBarModule,
   ],
   providers: [
+    // AuthAdminGuard,
+    // AuthOfferGuard,//TODO czy to musi być?
     ToastMessageService,
   ],
   bootstrap: [AppComponent]

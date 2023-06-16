@@ -14,14 +14,11 @@ import { TopMenuComponent } from '@modules/top-menu/top-menu.component';
 import { MyInputModule } from '@shared/modules/my-input/my-input.module';
 import { ToastMessageModule } from '@shared/modules/toast-message/toast-message.module';
 import { LoginDialogComponent } from '@modules/top-menu/components/login-dialog/login-dialog.component';
-import { AddOfferDialogComponent } from './components/add-offer-dialog/add-offer-dialog.component';
-import { AdminSubmitFormService } from '@modules/admin/services/admin-submit-form.service';
 
 @NgModule({
   declarations: [
     TopMenuComponent,
     LoginDialogComponent,
-    AddOfferDialogComponent,
   ],
   imports: [
     FormsModule,
@@ -43,7 +40,6 @@ import { AdminSubmitFormService } from '@modules/admin/services/admin-submit-for
   ],
   providers: [
     TopMenuService,
-    AdminSubmitFormService,
   ],
 })
 export class TopMenuModule { }

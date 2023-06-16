@@ -29,23 +29,15 @@ export class OffersComponent implements OnInit {
     }
   }
 
-  @Input() set refreshTrigger(value: number) {
-    this.refreshOffers();
-  }
-
   getFav(): void {
     this.isFavourites = true;
     this.page = 1;
     this.offers$ = this.offersService.getFavourites(this.page, this.pageSize).pipe(
       tap((res) => this.totalSites = Math.ceil(res.count / this.pageSize)),
-      tap((res) => this.totalCount = res.count),
       map((res) => {
         return {
           ...res,
-          offers: res.offers.map((item) => ({
-            ...item,
-            isFavourite: true,
-          }))
+          isFavourite: true,
         }
       }),
     )
@@ -57,7 +49,6 @@ export class OffersComponent implements OnInit {
   page = 1;
   offers$: Observable<MainOffer>;
   totalSites: number;
-  totalCount: number = 0;
   isAdmin: boolean;
   isNotLogged: boolean;
   canComment: boolean;
@@ -173,7 +164,6 @@ export class OffersComponent implements OnInit {
     const county = Number(localStorage.getItem('userLocalCountyId'));
     this.countyId = county ? county : Number(localStorage.getItem('userProfileCountyId'));
     this.offers$ = this.offersService.getAllOffers(this.countyId, this.search, this.categoryId, this.page, this.pageSize).pipe(
-      tap((res) => this.totalCount = res.count),
       tap((res) => this.totalSites = Math.ceil(res.count / this.pageSize)));
   }
 }

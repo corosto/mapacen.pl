@@ -1,9 +1,7 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <!-- Uploaded to: SVG Repo, www.svgrepo.com, Transformed by: SVG Repo Mixer Tools -->
-<svg fill="#D36B00" width="800px" height="800px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<svg width="800px" height="800px" viewBox="0 -0.5 17 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="si-glyph si-glyph-like" fill="#000000">
 <g id="SVGRepo_bgCarrier" stroke-width="0"/>
 <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
-<g id="SVGRepo_iconCarrier">
-<path d="M3,21a1,1,0,0,1-1-1V12a1,1,0,0,1,1-1H6V21ZM19.949,10H14.178V5c0-2-3.076-2-3.076-2s0,4-1.026,5C9.52,8.543,8.669,10.348,8,11V21H18.644a2.036,2.036,0,0,0,2.017-1.642l1.3-7A2.015,2.015,0,0,0,19.949,10Z"/>
-</g>
+<g id="SVGRepo_iconCarrier"> <title>863</title> <defs> </defs> <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g transform="translate(1.000000, 1.000000)" fill="#60489c"> <path d="M3.811,12.958 L1.194,12.958 C0.562,12.958 0.048,12.456 0.048,11.836 L0.048,6.128 C0.048,5.508 0.563,5.005 1.194,5.005 L3.811,5.005 C4.445,5.005 4.959,5.508 4.959,6.128 L4.959,11.836 C4.959,12.456 4.444,12.958 3.811,12.958 L3.811,12.958 Z" class="si-glyph-fill"> </path> <path d="M13.938,9.949 L13.938,11.033 L15.452,11.033 C15.376,12.179 14.794,12.93 13.712,12.93 L9.286,12.93 C8.598,12.93 8.257,11.618 6.587,11.618 L6.029,11.637 L6.029,5.681 C6.029,5.681 7.092,5.515 7.448,4.39 C7.448,4.39 8.899,0.429 10.018,0.034 C10.676,0.034 11.209,-0.013 11.209,1.159 L10.614,2.973 C10.614,2.973 10.261,5.005 12.754,5.005 L14.899,5.005 C15.587,5.005 15.959,5.429 15.959,6.054 C15.959,6.054 15.973,6.411 15.966,6.95 L13.939,6.95 L13.939,8.034 L15.929,8.034 C15.894,8.634 15.827,9.3 15.711,9.95 L13.938,9.95 L13.938,9.949 Z" class="si-glyph-fill"> </path> </g> </g> </g>
 </svg>

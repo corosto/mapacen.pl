@@ -19,6 +19,7 @@ import { MatSelectChange } from '@angular/material/select';
 })
 export class LoginDialogComponent {
 
+  @ViewChild(MatAutocomplete) matAutocomplete: MatAutocomplete;
   loginForm: FormGroup;
   registerForm: FormGroup;
   login = true;
@@ -109,6 +110,6 @@ export class LoginDialogComponent {
   }
 
   private refresh() {
-    setTimeout(() => window.location.reload(), 10);
+    setTimeout(() => window.location.reload(), 10)
   }
 }

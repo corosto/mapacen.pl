@@ -75,9 +75,7 @@
     class="offer"
     (click)="addOffer()"
   >
-    <span class="white">
-      Dodaj ofertę
-    </span>
+    Dodaj ofertę
   </button>
 
   <button
@@ -86,21 +84,16 @@
     class="login"
     (click)="logIn()"
   >
-    <span class="white">
-      Zaloguj
-    </span>
+    Zaloguj
   </button>
 
   <ng-template #log>
     <div class="oszukanie">
       <button
-        mat-icon-button
+        class="login logowanie"
         (click)="showUserInfo = !showUserInfo"
       >
-        <mat-icon
-          class="userIcon"
-          svgIcon="ziomek"
-        ></mat-icon>
+        <mat-icon class="iconLogged">face_5</mat-icon>
       </button>
     </div>
   </ng-template>

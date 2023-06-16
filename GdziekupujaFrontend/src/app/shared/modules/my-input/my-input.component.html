@@ -1,7 +1,6 @@
 <mat-form-field
   class="form-field"
   [appearance]="appearance"
-  [hideRequiredMarker]="true"
 >
   <mat-label class="black">
     {{ label }}
@@ -9,7 +8,6 @@
   </mat-label>
 
   <input
-  class="black"
     #input
     matInput
     id="{{ 'search-' + label }}"
@@ -22,6 +20,7 @@
     [errorStateMatcher]="matcher"
     [autocomplete]="autocomplete"
     [maxLength]="maxLength ?? 999"
+    lzTrim
   />
 
   <div

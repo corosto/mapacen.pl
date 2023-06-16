@@ -1,7 +1,6 @@
 <app-top-menu
   (refreshOffers)="refreshOffers($event)"
   (getFavourites)="getFavourites()"
-  (justRefreshOffers)="justRefreshOffers()"
 >
 </app-top-menu>
 
@@ -10,7 +9,6 @@
     class="size"
     [filterOffers]="offer"
     [getFavourites]="favouritesId"
-    [refreshTrigger]="refreshTrigger"
   >
   </app-offers>
 </div>
@@ -21,5 +19,5 @@
   class="admin-button"
   (click)="onAdminButtonClick();"
 >
-  <mat-icon class="white">construction</mat-icon>
+  <mat-icon>construction</mat-icon>
 </button>

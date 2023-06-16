@@ -1,7 +1,9 @@
 .button {
   width: auto;
+  border: 1px solid rgb(224, 224, 224);
   border-radius: 18px;
   height: 56px;
+  color: red;
 }
 
 .row {
@@ -16,6 +18,18 @@
   position: relative;
   bottom: 1px;
   color: black !important;
+}
+
+.lock {
+  &__icon {
+    transform: scale(0.90);
+    color: rgb(204, 204, 204);
+    transition: color .2s ease-in-out;
+
+    &:hover {
+      color: rgb(120, 120, 120);
+    }
+  }
 }
 
 ::ng-deep .nestedDropdownMenu {

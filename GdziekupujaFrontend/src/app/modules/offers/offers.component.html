@@ -1,17 +1,3 @@
-<span
-  class="favourites-title"
-  *ngIf="isFavourites"
->
-  <mat-icon
-    (click)="leaveFavourites()"
-    class="arrow"
-  >
-    arrow_back_ios
-  </mat-icon>
-  <span>
-    Ulubione
-  </span>
-</span>
 <div class="container">
   <div
     class="disclaimer"
@@ -19,17 +5,27 @@
   >
     Aby korzystać z serwisu, wybierz interesujący Cię region lub zaloguj się
   </div>
+  <span
+    class="favourites-title"
+    *ngIf="isFavourites"
+  >
+    <mat-icon
+      (click)="leaveFavourites()"
+      class="arrow"
+    >
+      arrow_back_ios
+    </mat-icon>
+    <span>
+      Ulubione
+    </span>
+  </span>
 
   <ng-template #canSeeOffers>
-    <ng-container *ngIf="offers$ | async as offers">
-      <span
-        *ngIf="totalCount"
-        class="totalCount"
-      >Znaleziono {{ totalCount }} ofert/y</span>
-      <div
-        class="isData offer"
-        *ngIf="offers?.offers?.length; else noData"
-      >
+    <div
+      class="isData offer"
+      *ngIf="offers$ | async as offers"
+    >
+      <ng-container *ngIf="offers?.offers?.length; else noData">
         <mat-accordion
           class="item"
           *ngFor="let offer of offers.offers"
@@ -45,7 +41,7 @@
               [expandedHeight]="'125px'"
             >
               <div class="max">
-                <div class="pic">
+                <div class="data--side pic">
                   <img
                     class="photo"
                     [src]="imageUrl + offer.product.imageName"
@@ -55,44 +51,39 @@
                   <span class="name">
                     {{ offer.product.name }}
                   </span>
-                  <span class="price">
-                    {{ offer.price | setPrecision }} zł
-                  </span>
                   <span class="info">
-                    <mat-icon svgIcon="ziomek"></mat-icon>
-                    Pan Ropuch &nbsp;|&nbsp;
-                    <mat-icon svgIcon="location"></mat-icon>
-                    {{ offer.salesPoint.name }}
-                    ul.
-                    {{ offer.salesPoint.address.street }}
-                    {{ offer.salesPoint.address.number }}, {{ offer.salesPoint.address.city }}
+                    {{ offer.salesPoint.name }}, {{ offer.salesPoint.address.city }}
+                    <span *ngIf="offer.opened">
+                      &nbsp;ul.
+                      {{ offer.salesPoint.address.street }}
+                      {{ offer.salesPoint.address.number }}
+                    </span>
                   </span>
                 </span>
                 <div class="data--side">
-                  <span class="time data--side--move">
-                    <mat-icon svgIcon="clock"></mat-icon>
-                    05.02.2022, 23:12
-                  </span>
-                  <!-- <div class="id">
+                  <div class="id">
                     <span *ngIf="isAdmin">
                       &nbsp;Id oferty: {{ offer.id }}
                     </span>
-                  </div> -->
+                  </div>
+                  <span class="price">
+                    {{ offer.price | setPrecision }} zł
+                  </span>
                 </div>
               </div>
-              <button
-                class="data--side--move"
-                *ngIf="!isNotLogged"
-                mat-icon-button
-                (click)="$event.stopPropagation(); toggleFavourite(offer)"
-              >
-                <mat-icon [svgIcon]="offer.isFavourite ? 'my-heart-red' : 'my-heart-white'">
-                </mat-icon>
-              </button>
             </mat-expansion-panel-header>
             <div class="expanded-data">
-              <div class="comments-title">
-                Komentarze
+              <div class="heart-container">
+                <span class="favourites-title">
+                  Komentarze
+                </span>
+                <button
+                  *ngIf="!isNotLogged"
+                  mat-icon-button
+                  (click)="toggleFavourite(offer)"
+                >
+                  <mat-icon [svgIcon]="offer.isFavourite ? 'my-heart-red' : 'my-heart-white'"></mat-icon>
+                </button>
               </div>
               <form
                 [formGroup]="form"
@@ -116,7 +107,7 @@
                   class="comment-button"
                   (click)="comment(offer)"
                 >
-                <span class="white">Skomentuj</span>
+                  Skomentuj
                 </button>
               </div>
               <div *ngIf="offer.comments?.length; else noComments">
@@ -159,22 +150,18 @@
                       </button>
                     </mat-menu>
                   </span>
-                  <span class="comment-time">10.04.2021 21:37</span>
                   <div class="likes">
                     {{ comment.likes }}
-                    <div class="button button--like">
-                      <button
-                        [disabled]="isNotLogged"
-                        mat-icon-button
-                        (click)="like(comment)"
-                      >
-                        <mat-icon
-                          [svgIcon]="comment.isLikedOrDislikedByUser === true ? 'my-like-clicked' : 'my-like-not-clicked'"
-                        ></mat-icon>
-                      </button>
-                    </div>
                     <button
-                      class="button--dislike"
+                      [disabled]="isNotLogged"
+                      mat-icon-button
+                      (click)="like(comment)"
+                    >
+                      <mat-icon
+                        [svgIcon]="comment.isLikedOrDislikedByUser === true ? 'my-like-clicked' : 'my-like-not-clicked'"
+                      ></mat-icon>
+                    </button>
+                    <button
                       [disabled]="isNotLogged"
                       mat-icon-button
                       (click)="dislike(comment)"
@@ -183,7 +170,6 @@
                         [svgIcon]="comment.isLikedOrDislikedByUser === false ? 'my-dislike-clicked' : 'my-dislike-not-clicked'"
                       ></mat-icon>
                     </button>
-                    <!-- </div> -->
                     {{ comment.disLikes }}
                   </div>
                 </div>
@@ -204,21 +190,19 @@
             mat-icon-button
             (click)="changePage(-1)"
           >
-            <mat-icon svgIcon="left"></mat-icon>
+            <mat-icon>chevron_left</mat-icon>
           </button>
-          <span class="paging--size">
-            Strona: {{ page }} z {{ totalSites }}
-          </span>
+          Strona: {{ page }} z {{ totalSites }}
           <button
             [disabled]="page >= totalSites"
             mat-icon-button
             (click)="changePage(1)"
           >
-            <mat-icon svgIcon="right"></mat-icon>
+            <mat-icon>chevron_right</mat-icon>
           </button>
         </div>
-      </div>
-    </ng-container>
+      </ng-container>
+    </div>
   </ng-template>
 
   <ng-template #noData>

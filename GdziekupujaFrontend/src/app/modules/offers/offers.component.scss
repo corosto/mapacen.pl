@@ -1,34 +1,17 @@
 @use '/src/styles/colors' as color;
 
-* {
-  font-weight: 400;
-  color: black;
-}
-
-:host {
-  font-family: UseForAll;
-}
-
-.totalCount {
-  font-size: 26px;
-  padding: 6px 0 10px;
-}
-
 .offer {
   width: 1080px;
   padding: 14px;
+  background-color: color.$primaryColor;
   border-radius: 24px;
 }
 
 .paging {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   width: 100%;
-
-  &--size {
-    font-size: 18px;
-  }
 }
 
 .header {
@@ -39,7 +22,7 @@
   border: 1px solid white;
   border-radius: 24px;
   width: 100%;
-  margin-bottom: 22px;
+  margin-bottom: 20px;
 }
 
 .container {
@@ -51,14 +34,18 @@
 }
 
 .name {
+  font-family: Labels;
   font-size: 25px;
+  height: 65%;
+  display: flex;
+  align-items: center;
+  width: fit-content;
 }
 
 .info {
-  font-size: 20px;
+  font-size: 19px;
   height: 35%;
-  display: flex;
-  align-items: center;
+  color: rgb(153, 153, 153);
 }
 
 .max {
@@ -68,52 +55,42 @@
   justify-content: space-between;
 }
 
-.time {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: fit-content;
-  gap: 5px;
-  font-size: 16px;
-  padding-top: 12px;
-  min-width: 175px;
-}
-
 .data {
   height: 100%;
   width: 100%;
   border-radius: 24px !important;
-  background-color: color.$primaryColor;
+  background-color: color.$backgroundColor;
 
   &--side {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     height: 100%;
     width: 20%;
-    display: flex;
-    justify-content: end;
-
-    &--move {
-      position: relative;
-      left: 13px;
-    }
+    color: black;
+    padding-right: 20px;
   }
 
   &--center {
-    padding: 10px 15px 0;
-    height: 100%;
-    width: 60%;
+    padding: 0 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 14px;
+    height: 100%;
+    width: 60%;
+    color: black;
   }
 }
 
 .price {
   font-family: Labels;
+  height: 100%;
+  width: 100%;
   font-size: 32px;
-  color: color.$secondaryColor;
-  position: relative;
-  top: 11px
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 .disclaimer {
@@ -151,6 +128,16 @@
   gap: 5px;
   font-size: 18px;
   font-weight: 500;
+}
+
+.favourites-title {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 10px 0 20px;
+  width: 100%;
+  float: left;
+  position: relative;
+  left: 8px;
 }
 
 .id {
@@ -196,7 +183,6 @@
     border: solid 1px white;
     border-radius: 16px;
     width: 98%;
-    background-color: color.$backgroundColor;
   }
 
   &-body {
@@ -211,29 +197,13 @@
   }
 
   &-button {
-    border-radius: 12px;
+    border: solid 1px white;
+    border-radius: 24px;
     background-color: color.$secondaryColor;
     width: 150px;
     height: 40px;
     font-size: 19px;
     font-weight: 400;
-  }
-
-  &-time {
-    padding-left: 10px;
-    font-family: UseForAll;
-  }
-}
-
-.button {
-  position: relative;
-
-  &--like {
-    top: -3px;
-  }
-  
-  &--dislike {
-    top: 3px;
   }
 }
 
@@ -266,7 +236,8 @@
   font-family: 'SiteTitle';
   font-size: 20px;
   font-weight: 500;
-  padding-left: 10px;
+  position: relative;
+  left: 10px;
 }
 
 .icon {
@@ -274,9 +245,11 @@
   z-index: 10;
 }
 
-.comments-title {
-  padding: 0 0 10px 14px;
-  font-size: 22px;
+.heart-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 .mat-icon {
@@ -291,16 +264,6 @@
   font-size: 20px;
   padding-top: 10px;
   margin-bottom: 30px;
-}
-
-.favourites-title {
-  font-size: 22px;
-  font-weight: 600;
-  margin: 10px 0 20px;
-  width: 100%;
-  float: left;
-  position: relative;
-  left: 8px;
 }
 
 .arrow {

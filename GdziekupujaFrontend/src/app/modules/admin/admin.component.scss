@@ -1,13 +1,13 @@
 @use '/src/styles/colors' as color;
 
 .top {
-  padding: 0 16px;
+  height: 58px;
+  padding: 8px 16px;
   margin: 5px 10px;
   display: flex;
   align-items: center;
-  border-radius: 12px;
+  border-radius: 24px;
   justify-content: space-between;
-  height: 66px;
 
   &-size {
     width: 200px;
@@ -16,22 +16,20 @@
 
 .return {
   position: absolute;
-  top: 80px;
-  left: 15px;
+  top: 95px;
+  left: 20px;
   background-color: color.$secondaryColor;
-  width: 40px;
-  height: 40px;
+  border: 1px solid white;
 }
 
 .title {
   position: relative;
   bottom: 5px;
   font-family: 'SiteTitle';
-  font-size: 38px;
+  font-size: 40px;
   display: flex;
   align-items: center;
   color: black;
-  color: color.$secondaryColor;
 
   &-size {
     width: 200px;
@@ -43,4 +41,8 @@
   background-color: color.$primaryColor;
   border-radius: 18px;
   padding: 20px;
+}
+
+.icon {
+  color: black;
 }
