@@ -69,7 +69,7 @@
                   </span>
                 </span>
                 <div class="data--side">
-                  <span class="time">
+                  <span class="time data--side--move">
                     <mat-icon svgIcon="clock"></mat-icon>
                     05.02.2022, 23:12
                   </span>
@@ -81,6 +81,7 @@
                 </div>
               </div>
               <button
+                class="data--side--move"
                 *ngIf="!isNotLogged"
                 mat-icon-button
                 (click)="$event.stopPropagation(); toggleFavourite(offer)"
@@ -115,7 +116,7 @@
                   class="comment-button"
                   (click)="comment(offer)"
                 >
-                  <span class="white">Skomentuj</span>
+                <span class="white">Skomentuj</span>
                 </button>
               </div>
               <div *ngIf="offer.comments?.length; else noComments">
