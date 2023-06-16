@@ -1,0 +1,148 @@
+app-top-menu {
+  .top {
+    padding: 8px 16px;
+    margin: 5px 10px;
+    display: flex;
+    align-items: center;
+    border-radius: 24px;
+    justify-content: space-between;
+  }
+
+  .title {
+    width: 200px;
+    position: relative;
+    bottom: 5px;
+    cursor: pointer;
+    font-family: 'SiteTitle';
+    font-size: 40px;
+    display: flex;
+    align-items: center;
+    color: rgb(245, 245, 245);
+  }
+
+  .button {
+    cursor: pointer;
+    border: 1px solid rgb(245, 245, 245);
+    border-radius: 16px;
+    min-height: 55px;
+    min-width: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .powiat {
+    cursor: pointer;
+    min-width: 240px;
+  }
+
+  .kategoria {
+    cursor: pointer;
+    min-width: 220px;
+    position: relative;
+    right: 41px;
+  }
+
+  .fix-icon {
+    position: relative;
+    left: 10px;
+    display: flex;
+    justify-content: flex-start !important;
+  }
+
+  .find {
+    position: relative;
+    right: 40px;
+  }
+
+  .produkt {
+    min-width: 250px;
+    width: 100%;
+  }
+
+  .login {
+    cursor: pointer;
+    height: 55px !important;
+    border: 1px solid rgb(245, 245, 245) !important;
+    background-color: rgb(96, 72, 156);
+    border-radius: 16px;
+    font-size: 18px;
+  }
+
+  .iconLogged {
+    font-size: 35px;
+    width: fit-content;
+    height: fit-content;
+    color: rgb(245, 245, 245);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .logowanie {
+    width: 55px;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .user {
+    position: absolute;
+    width: 300px;
+    z-index: 10;
+    top: 9%;
+    right: 2%;
+    display: flex;
+    align-items: center;
+    background-color: rgb(22, 32, 65);
+    border: 1px solid rgb(245, 245, 245);
+    border-radius: 24px;
+  }
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    font-size: 17px;
+  }
+
+  .disable {
+    pointer-events: none;
+  }
+
+  .fix {
+    border: solid 1px white;
+
+    &--powiat {
+      border-radius: 16px;
+    }
+
+    &--produkt {
+      border-radius: 16px 0 0 16px;
+    }
+
+    &--kategoria {
+      border-radius: 0 16px 16px 0;
+    }
+  }
+
+  .oszukanie {
+    width: 200px;
+    min-width: 200px;
+    max-width: 200px;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .wbok {
+    position: relative;
+    left: 20px;
+  }
+}

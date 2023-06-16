@@ -64,7 +64,6 @@ namespace MapacenBackend.Services
                     .Like(o.Product.Name, $"%{productName}%"))
                 .OrderByDescending(o => o.Id)
                 .Select(o => o);
-                
 
             var count = offers.Count();
 

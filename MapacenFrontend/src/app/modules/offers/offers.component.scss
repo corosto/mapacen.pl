@@ -1,0 +1,274 @@
+.paging {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+}
+
+.header {
+  padding: 0 24px 0 0;
+}
+
+.item {
+  border: 1px solid white;
+  border-radius: 24px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.name {
+  font-family: Labels;
+  font-size: 25px;
+  height: 65%;
+  display: flex;
+  align-items: center;
+  width: fit-content;
+}
+
+.info {
+  font-size: 19px;
+  height: 35%;
+  color: rgb(153, 153, 153);
+}
+
+.max {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.data {
+  height: 100%;
+  width: 100%;
+  border-radius: 24px !important;
+  background-color: rgb(10, 17, 36);
+
+  &--side {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 20%;
+    color: white;
+    padding-right: 20px;
+  }
+
+  &--center {
+    padding: 0 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 60%;
+    color: white;
+  }
+}
+
+.price {
+  font-family: Labels;
+  height: 100%;
+  width: 100%;
+  font-size: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.disclaimer {
+  z-index: 11;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 30%;
+  color: rgb(235, 25, 25);
+  font-size: 22px;
+  font-weight: 500;
+  width: 380px;
+  height: 170px;
+  background-color: rgb(22, 32, 65);
+  border: 1px solid white;
+  border-radius: 24px;
+  padding: 15px;
+  letter-spacing: 2px;
+  line-height: 26px;
+}
+
+.isData {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.noData {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 35px;
+}
+
+.favourites-title {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 10px 0 20px;
+  width: 100%;
+  float: left;
+  position: relative;
+  left: 8px;
+}
+
+.id {
+  font-family: Roboto;
+  font-size: 14px;
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  font-style: italic;
+  padding: 3px 4px 0 0;
+}
+
+.expanded-data {
+  margin-top: 15px;
+  height: fit-content;
+  max-height: 600px;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 15px;
+    background-color: rgba(103, 72, 180, 0.548);
+  }
+}
+
+.likes {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+
+::ng-deep.mat-content {
+  width: 100% !important;
+  height: 125px !important;
+}
+
+.comment {
+  &-input {
+    border: solid 1px white;
+    border-radius: 16px;
+    width: 98%;
+  }
+
+  &-body {
+    min-height: 55px;
+    padding: 5px 10px;
+    font-size: 20px;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    word-break: break-all;
+  }
+
+  &-button {
+    border: solid 1px white;
+    border-radius: 24px;
+    background-color: rgb(96, 72, 156);
+    width: 150px;
+    height: 40px;
+    font-size: 19px;
+    font-weight: 400;
+  }
+}
+
+.com {
+  max-width: 96%;
+}
+
+.right {
+  width: 99%;
+  margin: 10px 0;
+  display: flex;
+  justify-content: end;
+}
+
+.full {
+  width: 98%;
+  display: flex;
+  flex-direction: column;
+
+  &--is-content {
+    margin-top: 50px;
+  }
+
+  &--no-content {
+    margin-top: 30px;
+  }
+}
+
+.author {
+  font-family: 'SiteTitle';
+  font-size: 20px;
+  font-weight: 500;
+  position: relative;
+  left: 10px;
+}
+
+.icon {
+  cursor: pointer;
+  z-index: 10;
+}
+
+.heart-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.mat-icon {
+  overflow: unset;
+}
+
+.no-comments {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  font-size: 20px;
+  padding-top: 10px;
+  margin-bottom: 30px;
+}
+
+.arrow {
+  cursor: pointer;
+  position: relative;
+  top: 4px;
+}
+
+.photo {
+  border-radius: 18px;
+}
+
+.pic {
+  display: flex;
+  align-items: flex-start;
+}

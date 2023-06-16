@@ -1,0 +1,23 @@
+<app-top-menu
+  (refreshOffers)="refreshOffers($event)"
+  (getFavourites)="getFavourites()"
+>
+</app-top-menu>
+
+<div class="center">
+  <app-offers
+    class="offer"
+    [filterOffers]="offer"
+    [getFavourites]="favouritesId"
+  >
+  </app-offers>
+</div>
+
+<button
+  *ngIf="admin"
+  mat-fab
+  class="admin-button"
+  (click)="onAdminButtonClick();"
+>
+  <mat-icon>construction</mat-icon>
+</button>
